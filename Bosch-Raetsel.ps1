@@ -4,7 +4,7 @@ Unklare Definition:
 Was ist mit Sandkörnern die über den Rand gehen? Bei mir fallen die vom Brett und sind verloren.
 Powershell Variante, einfach nur weil ich die letzten 2,5 Jahre fast nur Powershell gemacht habe.
 
-Hinweis: Ich ignoriere alle "über die Boardgrenzen Zugriff" Fehler :D.
+https://github.com/Joachim-Otahal/Bosch-Sandgrain-Challenge
 
 #>
 
@@ -46,10 +46,10 @@ for ($i=0;$i -lt $Iterationen;$i++) {
         for ($y=0;$y -lt $BoardYSize;$y++) {
             for ($x=0;$x -lt $BoardXSize;$x++) {
                 if ($Board[$x,$y] -ge 4) {
-                    $Board[($x-1),$y]++
-                    $Board[$x,($y-1)]++
-                    $Board[($x+1),$y]++
-                    $Board[$x,($y+1)]++
+                    if ($x-1 -ge 0) { $Board[($x-1),$y]++ }
+                    if ($y-1 -ge 0) { $Board[$x,($y-1)]++ }
+                    if ($x+1 -lt $BoardXSize) { $Board[($x+1),$y]++ }
+                    if ($y+1 -lt $BoardYSize) { $Board[$x,($y+1)]++ }
                     $Board[$x,$y] -= 4
                 }
             }
