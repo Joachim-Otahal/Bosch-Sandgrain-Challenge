@@ -12,3 +12,8 @@ Implementiere einen Simulator für die Berechnung des Sandhaufens und beantworte
 
 # Meinung:
 Die Definition ist nicht ganzu klar, was ist mit Körner welche über den Rand fallen? Das Bosch Bild lässt mich auch den genau verwendeten Algorithmus hinterfragen.
+
+# Mein Ergebnis
+Soweit es in Libreoffice Calc darstellbar ist - Dem Programm fehlt noch SO VIEL, aber sie kümmern sich immer um die Optik...):
+
+![Bosch-Raetsel-2022-04-11_22-34-26](https://user-images.githubusercontent.com/10100281/162839146-e4b27fbc-917c-4164-901d-b90dbca738d5.png)
