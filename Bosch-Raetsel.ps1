@@ -12,8 +12,8 @@ $StartDate = Get-Date
 
 #### Boardgröße
 
-$BoardXSize = [int]150
-$BoardYSize = [int]150
+$BoardXSize = [int]100
+$BoardYSize = [int]100
 $Board = New-Object 'object[,]' $BoardXSize,$BoardYSize
 for ($y=0;$y -lt $BoardYSize;$y++) {
     for ($x=0;$x -lt $BoardXSize;$x++) {
@@ -23,16 +23,16 @@ for ($y=0;$y -lt $BoardYSize;$y++) {
 
 #### Startkorn
 
-$Board[48,49] = [int]0
+$Board[48,49] = [int]1
 
 #### Droppoint
 
-$DropX = [int]25
+$DropX = [int]49
 $DropY = [int]49
 
 #### Interationen aka "Sandkörner"
 
-$Iterationen = [int]60000
+$Iterationen = [int]20000
 
 #### CSV vom Ergebnis
 $OutFile=".\Bosch-Raetsel-" + $StartDate.ToString("yyyy-MM-dd_HH-mm-ss") + ".csv"
