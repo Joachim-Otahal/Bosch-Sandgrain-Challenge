@@ -8,11 +8,18 @@ https://github.com/Joachim-Otahal/Bosch-Sandgrain-Challenge
 
 #>
 
+$StartDate = Get-Date
+
 #### Boardgröße
 
 $BoardXSize = [int]100
 $BoardYSize = [int]100
 $Board = New-Object 'object[,]' $BoardXSize,$BoardYSize
+for ($y=0;$y -lt $BoardYSize;$y++) {
+    for ($x=0;$x -lt $BoardXSize;$x++) {
+        $Board[$x,$y] = [int]0
+    }
+}
 
 #### Startkorn
 
@@ -31,13 +38,6 @@ $Iterationen = [int]20000
 $OutFile=".\Bosch-Raetsel-" + $StartDate.ToString("yyyy-MM-dd_HH-mm-ss") + ".csv"
 
 #### Init
-
-$StartDate = Get-Date
-for ($y=0;$y -lt $BoardYSize;$y++) {
-    for ($x=0;$x -lt $BoardXSize;$x++) {
-        $Board[$x,$y] = [int]0
-    }
-}
 
 for ($i=0;$i -lt $Iterationen;$i++) {
     #### Einzelnes Sandkorn
