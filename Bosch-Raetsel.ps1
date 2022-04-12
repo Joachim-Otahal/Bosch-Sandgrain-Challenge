@@ -62,7 +62,10 @@ $EndDate = Get-Date
 Write-Host "$([math]::Ceiling(($EndDate - $StartDate).TotalSeconds)) Sekunden benötigt"
 
 # Zählen und CSV erstellen
-$count0=$count1=$count2=$count3=[int]0
+$count0=$Board.Where({$_ -eq 0}).count
+$count1=$Board.Where({$_ -eq 1}).count
+$count2=$Board.Where({$_ -eq 2}).count
+$count3=$Board.Where({$_ -eq 3}).count
 Out-File -FilePath $OutFile -NoNewline -Encoding utf8 -InputObject '"y\x";'
 for ($x=0;$x -lt $BoardXSize-1;$x++) {
     Out-File -FilePath $OutFile -Append -NoNewline -Encoding utf8 -InputObject "$(($x-[Math]::Floor($BoardXSize/2)).ToString());"
@@ -75,12 +78,6 @@ for ($y=0;$y -lt $BoardXSize;$y++) {
             Out-File -FilePath $OutFile -Append -NoNewline -Encoding utf8 -InputObject "$($Board[$x,$y].ToString());"
         } else {
             Out-File -FilePath $OutFile -Append -Encoding utf8 -InputObject "$($Board[$x,$y].ToString())"
-        }
-        Switch ($Board[$x,$y]) {
-            0 {$count0++}
-            1 {$count1++}
-            2 {$count2++}
-            3 {$count3++}
         }
     }
 }
