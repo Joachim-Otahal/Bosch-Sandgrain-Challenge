@@ -1,5 +1,5 @@
 ﻿<#
-Bosh Rätsel https://www.facebook.com/BoschKarriere/photos/a.210421252381646/4968773053213085
+Bosch Rätsel https://www.facebook.com/BoschKarriere/photos/a.210421252381646/4968773053213085
 Unklare Definition:
 Was ist mit Sandkörnern die über den Rand gehen? Bei mir fallen die vom Brett und sind verloren.
 Powershell Variante, einfach nur weil ich die letzten 2,5 Jahre fast nur Powershell gemacht habe.
