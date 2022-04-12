@@ -12,8 +12,8 @@ $StartDate = Get-Date
 
 #### Boardgröße
 
-$BoardXSize = [int]100
-$BoardYSize = [int]100
+$BoardXSize = [int]150
+$BoardYSize = [int]150
 $Board = New-Object 'object[,]' $BoardXSize,$BoardYSize
 for ($y=0;$y -lt $BoardYSize;$y++) {
     for ($x=0;$x -lt $BoardXSize;$x++) {
@@ -23,16 +23,16 @@ for ($y=0;$y -lt $BoardYSize;$y++) {
 
 #### Startkorn
 
-$Board[48,49] = [int]1
+$Board[48,49] = [int]0
 
 #### Droppoint
 
-$DropX = [int]49
+$DropX = [int]25
 $DropY = [int]49
 
 #### Interationen aka "Sandkörner"
 
-$Iterationen = [int]20000
+$Iterationen = [int]60000
 
 #### CSV vom Ergebnis
 $OutFile=".\Bosch-Raetsel-" + $StartDate.ToString("yyyy-MM-dd_HH-mm-ss") + ".csv"
@@ -69,7 +69,7 @@ for ($x=0;$x -lt $BoardXSize-1;$x++) {
 }
 Out-File -FilePath $OutFile -Append -Encoding utf8 -InputObject "$(($x-[Math]::($BoardXSize/2)).ToString())"
 for ($y=0;$y -lt $BoardXSize;$y++) {
-    Out-File -FilePath $OutFile -Append -NoNewline -Encoding utf8 -InputObject "$(($x-[Math]::Floor($BoardYSize/2)).ToString());"
+    Out-File -FilePath $OutFile -Append -NoNewline -Encoding utf8 -InputObject "$(($y-[Math]::Floor($BoardYSize/2)+1).ToString());"
     for ($x=0;$x -lt $BoardXSize;$x++) {
         if ($x -ne ($BoardXSize-1)) {
             Out-File -FilePath $OutFile -Append -NoNewline -Encoding utf8 -InputObject "$($Board[$x,$y].ToString());"
