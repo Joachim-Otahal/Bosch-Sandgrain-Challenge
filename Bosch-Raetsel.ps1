@@ -37,7 +37,7 @@ $Iterationen = [int]20000
 #### CSV vom Ergebnis
 $OutFile=".\Bosch-Raetsel-" + $StartDate.ToString("yyyy-MM-dd_HH-mm-ss") + ".csv"
 
-#### Init
+#### loop
 
 for ($i=0;$i -lt $Iterationen;$i++) {
     #### Einzelnes Sandkorn
@@ -68,7 +68,7 @@ $count2=$Board.Where({$_ -eq 2}).count
 $count3=$Board.Where({$_ -eq 3}).count
 Out-File -FilePath $OutFile -NoNewline -Encoding utf8 -InputObject '"y\x";'
 for ($x=0;$x -lt $BoardXSize-1;$x++) {
-    Out-File -FilePath $OutFile -Append -NoNewline -Encoding utf8 -InputObject "$(($x-[Math]::Floor($BoardXSize/2)).ToString());"
+    Out-File -FilePath $OutFile -Append -NoNewline -Encoding utf8 -InputObject "$(($x-[Math]::Floor($BoardXSize/2)+1).ToString());"
 }
 Out-File -FilePath $OutFile -Append -Encoding utf8 -InputObject "$(($x-[Math]::($BoardXSize/2)).ToString())"
 for ($y=0;$y -lt $BoardXSize;$y++) {
@@ -82,10 +82,18 @@ for ($y=0;$y -lt $BoardXSize;$y++) {
     }
 }
 
+Out-File -FilePath $OutFile -Append -Encoding utf8 -InputObject "$([math]::Ceiling(($EndDate - $StartDate).TotalSeconds)) Sekunden benötigt"
+
 Write-Host "CSV output at $OutFile, ready to be used with your spreadsheet app..."
 Write-Host "0: $count0"
+Out-File -FilePath $OutFile -Append -Encoding utf8 -InputObject "0: $count0"
 Write-Host "1: $count1"
+Out-File -FilePath $OutFile -Append -Encoding utf8 -InputObject "1: $count1"
 Write-Host "2: $count2"
+Out-File -FilePath $OutFile -Append -Encoding utf8 -InputObject "2: $count2"
 Write-Host "3: $count3"
+Out-File -FilePath $OutFile -Append -Encoding utf8 -InputObject "3: $count3"
 Write-Host "Übrige Sandkörner: $($count3*3+$count2*2+$count1)"
+Out-File -FilePath $OutFile -Append -Encoding utf8 -InputObject "Übrige Sandkörner: $($count3*3+$count2*2+$count1)"
 Write-Host "Verlorene Sandkörner: $($Iterationen-$count3*3-$count2*2-$count1)"
+Out-File -FilePath $OutFile -Append -Encoding utf8 -InputObject "Verlorene Sandkörner: $($Iterationen-$count3*3-$count2*2-$count1)"
