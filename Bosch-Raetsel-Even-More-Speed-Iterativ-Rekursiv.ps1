@@ -6,7 +6,7 @@ Powershell Variante, einfach nur weil ich die letzten 2,5 Jahre fast nur Powersh
 
 https://github.com/Joachim-Otahal/Bosch-Sandgrain-Challenge
 
-Speed 2 Iterativ Variante, von 1770 Sekunden zu 309 Sekunden und jetzt 91 Sekunden (Ryzen 5950x).
+Speed 2 Iterativ Variante, von 1770 Sekunden zu 309 Sekunden und jetzt 59 Sekunden (Ryzen 5950x).
 welcher bei gefundenem >=4 vergrößert wird etc...
 
 #>
@@ -45,7 +45,7 @@ $OutFile=".\Bosch-Raetsel-" + $StartDate.ToString("yyyy-MM-dd_HH-mm-ss") + ".csv
 # anfälliger für Endlos-Schleifen. Da muss abgewogen werden ob der Programmieraufwand
 # und spätere Kostenersparnis sich lohnen. Das hier ist noch das einfachstmögliche
 # Beispiel einer solchen Implementierung mit unilimiterter Rekursion.
-# Es ginge noch schneller wenn wir das Rekursionlimit festlegen und das array fix definieren.
+# Es ginge noch schneller wenn wir das maximale Rekursionlimit festlegen und das array fix als .NET object definieren.
 
 $Depth = -1
 $DepthArray=@{}
@@ -66,23 +66,31 @@ for ($i=0;$i -lt $Iterationen;$i++) {
                 $Depth--
                 if ($x -gt 0) {
                     $Board[($x-1),$y]++
-                    $Depth++
-                    $DepthArray["$Depth"]=@(($x-1),$y)
+                    if ($Board[($x-1),$y] -ge 4) {
+                        $Depth++
+                        $DepthArray["$Depth"]=@(($x-1),$y)
+                    }
                 }
                 if ($y -gt 0) {
                     $Board[$x,($y-1)]++
-                    $Depth++
-                    $DepthArray["$Depth"]=@($x,($y-1))
+                    if ($Board[$x,($y-1)] -ge 4) {
+                        $Depth++
+                        $DepthArray["$Depth"]=@($x,($y-1))
+                    }
                 }
                 if ($x+1 -lt $BoardXSize) {
                     $Board[($x+1),$y]++
-                    $Depth++
-                    $DepthArray["$Depth"]=@(($x+1),$y)
+                    if ($Board[($x+1),$y] -ge 4) {
+                        $Depth++
+                        $DepthArray["$Depth"]=@(($x+1),$y)
+                    }
                 }
                 if ($y+1 -lt $BoardYSize) {
                     $Board[$x,($y+1)]++
-                    $Depth++
-                    $DepthArray["$Depth"]=@($x,($y+1))
+                    if ($Board[$x,($y+1)] -ge 4) {
+                        $Depth++
+                        $DepthArray["$Depth"]=@($x,($y+1))
+                    }
                 }
             } else {
                 $Depth--
