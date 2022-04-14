@@ -1,5 +1,5 @@
 # Bosch-Sandgrain-Challenge
-Bosh made a litte challenge...
+Bosch made a litte challenge...
 
 Orignal: https://www.facebook.com/BoschKarriere/photos/a.210421252381646/4968773053213085
 
@@ -14,7 +14,6 @@ Implementiere einen Simulator für die Berechnung des Sandhaufens und beantworte
 Die Definition ist nicht ganzu klar, was ist mit Körner welche über den Rand fallen? Das Bosch Bild lässt mich auch den genau verwendeten Algorithmus hinterfragen.
 
 # Mein Ergebnis
-Wichtiges Detail zu meiner Version: Ich nutze keine Rekursion, die wäre aber normalerweise nötig. Nur Powershell und Rekursion vermeide ich wenn es möglich ist - dafür ist Powershell zu ineffizient.
-Soweit es in Libreoffice Calc darstellbar ist - Dem Programm fehlt noch SO VIEL, aber sie kümmern sich immer um die Optik...):
+Wichtiges Detail zu meiner Version: Ich nutze keine Rekursion, die wäre aber normalerweise nötig. Nur Powershell und Rekursion vermeide ich wenn es möglich ist - dafür ist Powershell zu ineffizient. Hier dfas Bild soweit es in Libreoffice Calc darstellbar ist - Dem Programm fehlt noch SO VIEL, aber sie kümmern sich immer um die Optik...):
 
 ![Bosch-Raetsel-2022-04-11_22-34-26](https://user-images.githubusercontent.com/10100281/162839146-e4b27fbc-917c-4164-901d-b90dbca738d5.png)
