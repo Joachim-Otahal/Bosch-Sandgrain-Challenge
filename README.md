@@ -11,7 +11,7 @@ Implementiere einen Simulator für die Berechnung des Sandhaufens und beantworte
 ![Bosch-Simulator-Rätsel-278329595_4968773036546420_3197355297034891896_n](https://user-images.githubusercontent.com/10100281/162838834-d7dee6fc-7012-4932-a4e5-a79e99b03542.jpg)
 
 # Meinung:
-Die Definition ist nicht ganzu klar, was ist mit Körner welche über den Rand fallen? Das Bosch Bild lässt mich auch den genau verwendeten Algorithmus hinterfragen.
+Die Definition ist nicht ganu klar, was ist mit Körner welche über den Rand fallen? Das Bosch Bild lässt mich auch den genau verwendeten Algorithmus hinterfragen.
 
 # Mein Ergebnis
 Wichtiges Detail zu meiner Version: Ich nutze keine Rekursion, die wäre aber normalerweise nötig. Nur Powershell und Rekursion vermeide ich wenn es möglich ist - dafür ist Powershell zu ineffizient. Hier das Bild soweit es in Libreoffice Calc darstellbar ist - Dem Programm fehlt noch SO VIEL, aber sie kümmern sich immer um die Optik...):
