@@ -3,6 +3,11 @@ Bosch made a litte challenge...
 
 Orignal: https://www.facebook.com/BoschKarriere/photos/a.210421252381646/4968773053213085
 
+# Update Juli 2026 - Bosch-Raetsel-2026-PNG-output.ps1
+Ausgabe als PNG, alle 1000 iterationen. Nachdem ich durch meine Solarsteuerung weiß wie man bildchen malt..
+
+<img width="2160" height="2160" alt="Bosch-Raetsel-2026-07-12 20000" src="https://github.com/user-attachments/assets/8f98d04f-2bf4-4e13-b6a7-b65799204438" />
+
 # Text vom Posting:
 Einfache Berechnungsvorschriften können komplexe Formen hervorbringen, im Computer genau wie in der Natur. Beispiele sind fraktale Formen und zelluläre Automaten. Nehmen wir ein Feld der Größe 100x100 und platzieren ein Sandkorn auf x/y -1/0. Für jeden Rechenschritt lassen wir ein weiteres Sandkorn auf 0/0 fallen, welche ab einer Höhe von 4 zu den Rändern runterrutschen. Die Felder am Rand des „Sandkastens“ bleiben unverändert.
 Implementiere einen Simulator für die Berechnung des Sandhaufens und beantworte folgende Frage: Wie viele Felder sind nach 20.000 Sandkörnern noch leer, und wie viele Felder haben 1, 2 oder 3 Sandkörner? 
